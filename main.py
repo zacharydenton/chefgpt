@@ -103,7 +103,7 @@ def suggest_dish(client, personality, prompt):
         },
         {
             "role": "system",
-            "content": "Your task is to suggest a dish based on the ingredients provided by the user. First suggest a dish name that can be made with the given ingredients. Then provide a recipe for that dish.",
+            "content": "Your task is to suggest a dish based on the ingredients provided by the user. Do not provide the recipe at this stage; only suggest a dish name that can be made with the given ingredients.",
         },
         {
             "role": "user",
