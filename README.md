@@ -16,6 +16,12 @@ $ pip install -r requirements.txt
 $ python main.py
 ```
 
+### Local LLM using ollama
+
+```console
+$ OPENAI_MODEL="llama3:70b" OPENAI_BASE_URL="http://localhost:11434/v1" OPENAI_API_KEY="ollama" python main.py
+```
+
 ## Examples
 
 ### Suggesting a dish based on ingredients

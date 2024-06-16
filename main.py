@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+import os
+import re
 from pick import pick
 from openai import OpenAI
 
@@ -23,7 +25,7 @@ complexity of food.
     # Add your personality here
 }
 
-MODEL = "gpt-4o"
+MODEL = os.environ.get("OPENAI_MODEL", "gpt-4o")
 
 
 def select_personality(personalities):
@@ -76,7 +78,9 @@ def determine_task(client, prompt):
         messages=messages,
     )
     try:
-        return response.choices[0].message.content
+        result = response.choices[0].message.content
+        result = re.sub(r"['\"]", "", result)
+        return result
     except:
         return "unknown"
 
